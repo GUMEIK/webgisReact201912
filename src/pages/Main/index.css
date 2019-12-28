@@ -1,0 +1,29 @@
+/* // 导入阿里巴巴矢量图标库 */
+@import url("http://at.alicdn.com/t/font_1582231_2ih6f599zyc.css");
+.rightMenu{
+    position: absolute;
+    right: 10px;
+    bottom:100px;
+    width:50px;
+    height: 350px;
+    /* // background-color: orange; */
+    border:1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.rightMenu i{
+    border-radius: 10px;
+    line-height: 30px;
+    width:30px;
+    height: 30px;
+    background-color: #fff;
+    font-size: 20px;
+    color: #000;
+}
+i:hover{
+    cursor: pointer;
+}

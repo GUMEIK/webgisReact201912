@@ -1,5 +1,6 @@
 import React from 'react'
 import 'antd/dist/antd.css';
+import './index.css'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -22,7 +23,7 @@ export default class SiderDemo extends React.Component {
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
               <Icon type="pie-chart" />
-              <span>Option 1</span>
+              <span>图层</span>
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="desktop" />
@@ -60,15 +61,31 @@ export default class SiderDemo extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Bill is a cat.</div>
+          <Header style={{ background: '#ddd', padding: 0,height:20,margin:0}}>
+          </Header>
+          {/* 右侧内容区域 */}
+          <Content style={{ margin: '0' }} children={<h1>测试</h1>}>
+            <div 
+            // 作为arcGIS图层显示的容器
+            id="acrgisContainer"
+            style={{width:'100%',height:'100%'}}></div>
+            {/* 右侧菜单区域 */}
+            <div className="rightMenu">
+              <i className="iconfont iconsvgditutubiao-" onClick={()=>{
+                  this.setState({
+                      isShowFuncList:!this.state.isShowFuncList
+                  })
+              //    alert('ceshi')
+              }}></i>
+              <i className="iconfont iconditu"></i>
+              <i className="iconfont iconjia"></i>
+              <i className="iconfont icondelete"></i>
+              <i className="iconfont iconlocation"></i>
+              </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          {/* <Footer style={{ textAlign: 'center' ,height:20}}>
+            徐振鲁 司玄玄 吴春阳 王  哲  王  香
+          </Footer> */}
         </Layout>
       </Layout>
     );

@@ -1,8 +1,6 @@
 import React from 'react'
 import 'antd/dist/antd.css';
 import { Comment, Avatar } from 'antd';
-// 导入回复组件
-import Replie  from '../Replie'
 const ExampleComment = ({ children }) => (
   <Comment
     actions={[<span key="comment-nested-reply-to">Reply to</span>]}
@@ -21,7 +19,6 @@ const ExampleComment = ({ children }) => (
     }
   >
     {children}
-    <Replie/>
   </Comment>
  
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Main from './pages/Login'
-import Comment from './components/Comment'
+import Main from './pages/Main'
+import Comment from './components/Table'
 function App() {
 
   return (
-    <Comment>
-      <Comment></Comment>
-    </Comment>
+    <div style={{display:'flex',justifyContent:'space-around'}}>
+      <Comment/>
+    </div>
   )
 }
 
