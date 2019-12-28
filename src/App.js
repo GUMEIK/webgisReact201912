@@ -6,7 +6,9 @@ import Comment from './components/Comment'
 function App() {
 
   return (
-    <Comment/>
+    <Comment>
+      <Comment></Comment>
+    </Comment>
   )
 }
 
