@@ -1,0 +1,20 @@
+.LoginWrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginWrapper .loginArea{
+    width:600px;
+    height: 500px;
+    /* background-color: aqua; */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    
+}
