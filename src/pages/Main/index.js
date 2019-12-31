@@ -2,7 +2,7 @@ import React from 'react'
 import 'antd/dist/antd.css';
 import './index.css'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-
+import Login from '../Login'
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -27,14 +27,14 @@ export default class SiderDemo extends React.Component {
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="desktop" />
-              <span>Option 2</span>
+              <span>后台管理</span>
             </Menu.Item>
             <SubMenu
               key="sub1"
               title={
                 <span>
                   <Icon type="user" />
-                  <span>User</span>
+                  <span>景点交流</span>
                 </span>
               }
             >
@@ -65,10 +65,19 @@ export default class SiderDemo extends React.Component {
           </Header>
           {/* 右侧内容区域 */}
           <Content style={{ margin: '0' }} children={<h1>测试</h1>}>
+
+
+            
             <div 
             // 作为arcGIS图层显示的容器
             id="acrgisContainer"
-            style={{width:'100%',height:'100%'}}></div>
+            style={{width:'100%',height:'100%'}}>
+
+                {/* 管理员登录界面 */}
+                {/* 登录成功跳转后台管理 */}
+            {/* <Login isMange={true} /> */}
+
+            </div>
             {/* 右侧菜单区域 */}
             <div className="rightMenu">
               <i className="iconfont iconsvgditutubiao-" onClick={()=>{

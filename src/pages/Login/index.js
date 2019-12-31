@@ -1,7 +1,8 @@
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css'
 import React from 'react'
+import {Link} from 'react-router-dom'
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -9,6 +10,13 @@ class NormalLoginForm extends React.Component {
         // 此处发送请求
       if (!err) {
         console.log('Received values of form: ', values);
+        console.log(this.props)
+        fetch('http://localhost:12306/').then(res=>res.text()).then(res =>{
+          if(res === 'ok'){
+            console.log(res)
+            this.props.history.push('/table')
+          }
+        })
       }
     });
   };
@@ -17,7 +25,9 @@ class NormalLoginForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
         <div className="LoginWrapper">
-            <div className="loginArea">
+            <div className="loginArea"  style={{backgroundColor:'#fff'}}>
+              {this.props.isMange && <span style={{fontStyle:'bold',backgroundColor:'#40a9ff',color:'#fff',padding:5}}>管理员登录</span>}
+              {this.props.isMange && <span style={{fontStyle:'bold',float:'right',backgroundColor:'#40a9ff',color:'#fff',padding:5}}>取消登录</span>}
             <Form onSubmit={this.handleSubmit} className="login-form" layout="vertical" style={{paddingTop:35}}>
         <Form.Item>
           {getFieldDecorator('username', {
@@ -61,10 +71,12 @@ class NormalLoginForm extends React.Component {
           
          
          </p>
+         {!this.props.isMange && 
          <p style={{display:'flex',justifyContent:'center'}}>
-          <Button type="primary" htmlType="submit"style={{width:200}}>
-           注册         </Button>
-          </p>
+          <Button type="primary" style={{width:200}}>
+           <Link to="/rejister">注册</Link>
+           </Button>
+          </p>}
         </Form.Item>
       </Form>
             </div>

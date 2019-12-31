@@ -8,8 +8,9 @@ export default class CardContainer extends Component {
     }
     render() {
         return (
-            <Card
-    style={{ width: 300 }}
+            <div style={{ width: 300 }}>
+              <Card
+    
     cover={
       <img
         alt="example"
@@ -33,8 +34,10 @@ export default class CardContainer extends Component {
       title="Card title"
       description="This is the description"
     />
-   {this.state.isShowReplie &&  <Replie/>}
+  
   </Card>
+  {this.state.isShowReplie &&  <Replie/>}
+            </div>
         )
     }
 }
