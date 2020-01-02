@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>基本热力图</title>
+    <style>
+        html, body, #container {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container"></div>
+<script src="//webapi.amap.com/maps?v=1.4.15&key=13538fd3fdd5dcf93c28360c7618bd4c&"></script>
+<script src="//webapi.amap.com/loca?v=1.3.0&key=13538fd3fdd5dcf93c28360c7618bd4c"></script>
+
+<script>
+
+    var map = new AMap.Map('container', {
+       // features: ['bg', 'road'],
+        mapStyle: 'amap://styles/grey',
+        center: [113.2420100000,35.2156300000],
+        pitch: 0,
+        zoom: 13,
+        viewMode: '2D'
+    });
+
+    var layer = new Loca.HeatmapLayer({
+        map: map,
+    });
+var heatmapData = [
+    {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d504",
+        "citytype": "山阳区",
+        "count": "78",
+        "lat": "35.205770999999999",
+        "lng": "113.259995",
+        "location": "朱雀园"
+      }, {
+        "__v": 0,
+       
+        "citytype": "山阳区",
+        "count": "99",
+        "lat": "35.4344690000",
+        "lng": "113.3730270000",
+        "location": "云台山"
+      },
+      {
+        "__v": 0,
+       
+        "citytype": "山阳区",
+        "count": "91",
+        "lat": "35.3968440000",
+        "lng": "113.2206620000",
+        "location": "青龙峡"
+      },
+      {
+        "__v": 0,
+       
+        "citytype": "山阳区",
+        "count": "88",
+        "lat": "35.3469500000",
+        "lng": "113.0101810000",
+        "location": "青天河"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d506",
+        "citytype": "山阳区",
+        "count": "34",
+        "lat": "35.212989999999998",
+        "lng": "113.27994",
+        "location": "中心坛"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d505",
+        "citytype": "山阳区",
+        "count": "56",
+        "lat": "35.238373000000003",
+        "lng": "113.24876",
+        "location": "众盛游园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d507",
+        "citytype": "山阳区",
+        "count": "69",
+        "lat": "35.247447999999999",
+        "lng": "113.26451299999999",
+        "location": "寨卜昌古民居"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d508",
+        "citytype": "山阳区",
+        "count": "62",
+        "lat": "35.208866",
+        "lng": "113.254209",
+        "location": "月季公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d50a",
+        "citytype": "山阳区",
+        "count": "34",
+        "lat": "35.202930000000002",
+        "lng": "113.280235",
+        "location": "游园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d50c",
+        "citytype": "山阳区",
+        "count": "68",
+        "lat": "35.247959999999999",
+        "lng": "113.238103",
+        "location": "药王庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d50b",
+        "citytype": "山阳区",
+        "count": "87",
+        "lat": "35.207588999999999",
+        "lng": "113.277226",
+        "location": "英国福公司钱庄旧址"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d50d",
+        "citytype": "山阳区",
+        "count": "23",
+        "lat": "35.213619999999999",
+        "lng": "113.27537",
+        "location": "阳庙镇李鹿宿村清朝古宅"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d509",
+        "citytype": "山阳区",
+        "count": "72",
+        "lat": "35.239099000000003",
+        "lng": "113.308682",
+        "location": "毓秀园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d50f",
+        "citytype": "山阳区",
+        "count": "14",
+        "lat": "35.211762",
+        "lng": "113.282633",
+        "location": "巡返大圆通寺"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d511",
+        "citytype": "解放区",
+        "count": "52",
+        "lat": "35.224561000000001",
+        "lng": "113.191531",
+        "location": "鑫源水族馆"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d510",
+        "citytype": "解放区",
+        "count": "79",
+        "lat": "35.213800999999997",
+        "lng": "113.24234300000001",
+        "location": "玄帝庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d512",
+        "citytype": "解放区",
+        "count": "73",
+        "lat": "35.22101",
+        "lng": "113.23188399999999",
+        "location": "新东1898文化街区"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d50e",
+        "citytype": "山阳区",
+        "count": "17",
+        "lat": "35.251302000000003",
+        "lng": "113.24894",
+        "location": "闫河公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d514",
+        "citytype": "解放区",
+        "count": "36",
+        "lat": "35.207554000000002",
+        "lng": "113.219925",
+        "location": "王氏宗祠"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d516",
+        "citytype": "解放区",
+        "count": "26",
+        "lat": "35.237647000000003",
+        "lng": "113.19240600000001",
+        "location": "桶张河老君庙戏楼"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d515",
+        "citytype": "解放区",
+        "count": "32",
+        "lat": "35.261201999999997",
+        "lng": "113.20741",
+        "location": "万方游园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d517",
+        "citytype": "解放区",
+        "count": "71",
+        "lat": "35.238517999999999",
+        "lng": "113.226748",
+        "location": "天下石刻三绝"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d513",
+        "citytype": "解放区",
+        "count": "34",
+        "lat": "35.221902",
+        "lng": "113.187197",
+        "location": "西关清真寺"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d519",
+        "citytype": "山阳区",
+        "count": "75",
+        "lat": "35.213619999999999",
+        "lng": "113.27537",
+        "location": "苏蔺村人民广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d51b",
+        "citytype": "山阳区",
+        "count": "34",
+        "lat": "35.208866",
+        "lng": "113.254209",
+        "location": "士林观音庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d51a",
+        "citytype": "山阳区",
+        "count": "45",
+        "lat": "35.289033000000003",
+        "lng": "113.30036200000001",
+        "location": "松鹤园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d51c",
+        "citytype": "山阳区",
+        "count": "45",
+        "lat": "35.266212000000003",
+        "lng": "113.260184",
+        "location": "沈氏宗祠"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d518",
+        "citytype": "解放区",
+        "count": "90",
+        "lat": "35.262495999999999",
+        "lng": "113.20876800000001",
+        "location": "太极广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d51e",
+        "citytype": "解放区",
+        "count": "89",
+        "lat": "35.263964000000001",
+        "lng": "113.236107",
+        "location": "三利达弓箭文化旅游区"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d520",
+        "citytype": "山阳区",
+        "count": "41",
+        "lat": "35.247959999999999",
+        "lng": "113.238103",
+        "location": "塞纳溪谷广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d51f",
+        "citytype": "解放区",
+        "count": "27",
+        "lat": "35.262245999999998",
+        "lng": "113.23809199999999",
+        "location": "三官庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d51d",
+        "citytype": "解放区",
+        "count": "73",
+        "lat": "35.232523",
+        "lng": "113.221155",
+        "location": "山阳故城"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d523",
+        "citytype": "山阳区",
+        "count": "91",
+        "lat": "35.207588999999999",
+        "lng": "113.277226",
+        "location": "清真女寺(恒基财富大厦西座西北)"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d521",
+        "citytype": "解放区",
+        "count": "82",
+        "lat": "35.224561000000001",
+        "lng": "113.191531",
+        "location": "人民广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d525",
+        "citytype": "解放区",
+        "count": "90",
+        "lat": "35.213800999999997",
+        "lng": "113.24234300000001",
+        "location": "迁边室"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d524",
+        "citytype": "山阳区",
+        "count": "34",
+        "lat": "35.251302000000003",
+        "lng": "113.24894",
+        "location": "墙南关帝庙遗址及石刻"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d522",
+        "citytype": "山阳区",
+        "count": "12",
+        "lat": "35.239099000000003",
+        "lng": "113.308682",
+        "location": "群英河游园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d528",
+        "citytype": "解放区",
+        "count": "34",
+        "lat": "35.238517999999999",
+        "lng": "113.226748",
+        "location": "南广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d526",
+        "citytype": "解放区",
+        "count": "96",
+        "lat": "35.223596000000001",
+        "lng": "113.23463700000001",
+        "location": "普新游园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d52a",
+        "citytype": "山阳区",
+        "count": "48",
+        "lat": "35.308481",
+        "lng": "113.30853399999999",
+        "location": "马庄阳庙天齐庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d529",
+        "citytype": "解放区",
+        "count": "51",
+        "lat": "35.200453000000003",
+        "lng": "113.240037",
+        "location": "奶奶庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d52d",
+        "citytype": "山阳区",
+        "count": "82",
+        "lat": "35.276220000000002",
+        "lng": "113.303839",
+        "location": "龙寺林陵树葬区"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d52b",
+        "citytype": "山阳区",
+        "count": "37",
+        "lat": "35.234214000000001",
+        "lng": "113.270612",
+        "location": "卢氏祖祠"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d527",
+        "citytype": "解放区",
+        "count": "21",
+        "lat": "35.207554000000002",
+        "lng": "113.219925",
+        "location": "普济公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d52f",
+        "citytype": "山阳区",
+        "count": "13",
+        "lat": "35.162880000000001",
+        "lng": "113.13249",
+        "location": "黎明脚步山地公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d52e",
+        "citytype": "山阳区",
+        "count": "45",
+        "lat": "35.277087999999999",
+        "lng": "113.303876",
+        "location": "龙泊演绎广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d532",
+        "citytype": "山阳区",
+        "count": "45",
+        "lat": "35.218097999999998",
+        "lng": "113.26597700000001",
+        "location": "科迪食文化广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d52c",
+        "citytype": "山阳区",
+        "count": "83",
+        "lat": "35.243189999999998",
+        "lng": "113.27749900000001",
+        "location": "龙源湖公园-青年志愿亭"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d530",
+        "citytype": "山阳区",
+        "count": "67",
+        "lat": "35.217723999999997",
+        "lng": "113.264698",
+        "location": "老王水族馆"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d534",
+        "citytype": "山阳区",
+        "count": "65",
+        "lat": "35.251302000000003",
+        "lng": "113.26991599999999",
+        "location": "焦作站北广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d537",
+        "citytype": "山阳区",
+        "count": "32",
+        "lat": "35.131605",
+        "lng": "113.124656",
+        "location": "焦作市森林公园百鸟苑"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d533",
+        "citytype": "山阳区",
+        "count": "68",
+        "lat": "35.168390000000002",
+        "lng": "113.13054",
+        "location": "焦作站南广场(装修中)"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d535",
+        "citytype": "山阳区",
+        "count": "90",
+        "lat": "35.223787000000002",
+        "lng": "113.27552900000001",
+        "location": "焦作影视城-玉带桥"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d531",
+        "citytype": "山阳区",
+        "count": "68",
+        "lat": "35.153339000000003",
+        "lng": "113.147345",
+        "location": "老君庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d539",
+        "citytype": "解放区",
+        "count": "67",
+        "lat": "35.266002",
+        "lng": "113.198182",
+        "location": "焦作市雕塑公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d538",
+        "citytype": "解放区",
+        "count": "45",
+        "lat": "35.218845999999999",
+        "lng": "113.195756",
+        "location": "焦作市基督教堂"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d53a",
+        "citytype": "解放区",
+        "count": "45",
+        "lat": "35.219430000000003",
+        "lng": "113.195683",
+        "location": "焦作森林动物园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d53c",
+        "citytype": "解放区",
+        "count": "54",
+        "lat": "35.215699999999998",
+        "lng": "113.211367",
+        "location": "焦作盆景园(暂停营业)"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d536",
+        "citytype": "山阳区",
+        "count": "73",
+        "lat": "35.217267",
+        "lng": "113.255353",
+        "location": "焦作市天主堂"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d53e",
+        "citytype": "解放区",
+        "count": "45",
+        "lat": "35.239514999999997",
+        "lng": "113.22938600000001",
+        "location": "建业公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d53d",
+        "citytype": "解放区",
+        "count": "23",
+        "lat": "35.212826",
+        "lng": "113.237228",
+        "location": "焦东基督教堂"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d53f",
+        "citytype": "解放区",
+        "count": "78",
+        "lat": "35.220854000000003",
+        "lng": "113.23497399999999",
+        "location": "纪念塔"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d541",
+        "citytype": "山阳区",
+        "count": "64",
+        "lat": "35.224612",
+        "lng": "113.27091900000001",
+        "location": "怀庆清真寺"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d53b",
+        "citytype": "解放区",
+        "count": "37",
+        "lat": "35.240591000000002",
+        "lng": "113.225611",
+        "location": "焦作清真寺"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d542",
+        "citytype": "山阳区",
+        "count": "34",
+        "lat": "35.219940000000001",
+        "lng": "113.27178499999999",
+        "location": "鸿门寺"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d543",
+        "citytype": "山阳区",
+        "count": "62",
+        "lat": "35.276220000000002",
+        "lng": "113.303839",
+        "location": "河南理工大学-世纪广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d544",
+        "citytype": "山阳区",
+        "count": "45",
+        "lat": "35.162880000000001",
+        "lng": "113.13249",
+        "location": "和谐广场"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d546",
+        "citytype": "山阳区",
+        "count": "45",
+        "lat": "35.218097999999998",
+        "lng": "113.26597700000001",
+        "location": "关帝庙(侯卜昌)"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d540",
+        "citytype": "解放区",
+        "count": "67",
+        "lat": "35.247501",
+        "lng": "113.202887",
+        "location": "火神庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d547",
+        "citytype": "山阳区",
+        "count": "37",
+        "lat": "35.223787000000002",
+        "lng": "113.27552900000001",
+        "location": "怪坡园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d548",
+        "citytype": "山阳区",
+        "count": "56",
+        "lat": "35.217233",
+        "lng": "113.25575499999999",
+        "location": "古柏观音寺"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d549",
+        "citytype": "山阳区",
+        "count": "87",
+        "lat": "35.217267",
+        "lng": "113.255353",
+        "location": "缝山公园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d54c",
+        "citytype": "解放区",
+        "count": "56",
+        "lat": "35.271814999999997",
+        "lng": "113.20814799999999",
+        "location": "恩村祖师庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d54b",
+        "citytype": "解放区",
+        "count": "45",
+        "lat": "35.213729999999998",
+        "lng": "113.22877800000001",
+        "location": "范氏宗祠"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d545",
+        "citytype": "山阳区",
+        "count": "72",
+        "lat": "35.217723999999997",
+        "lng": "113.264698",
+        "location": "观音庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d54d",
+        "citytype": "山阳区",
+        "count": "34",
+        "lat": "35.234214000000001",
+        "lng": "113.270612",
+        "location": "恩村玉帝庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d54e",
+        "citytype": "解放区",
+        "count": "32",
+        "lat": "35.239514999999997",
+        "lng": "113.22938600000001",
+        "location": "东岳泰山庙"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d54a",
+        "citytype": "山阳区",
+        "count": "42",
+        "lat": "35.131605",
+        "lng": "113.124656",
+        "location": "丰收游园"
+      },
+      {
+        "__v": 0,
+        "_id": "5e0b07efe1c4db415cf7d54f",
+        "citytype": "解放区",
+        "count": "45",
+        "lat": "35.242190000000001",
+        "lng": "113.22304699999999",
+        "location": "东王褚比干财神庙"
+      },
+      
+]
+    var list = [];
+    var i = -1, length = heatmapData.length;
+    while (++i < length) {
+        var item = heatmapData[i];
+        list.push({
+            coordinate: [item.lng, item.lat],
+            count: item.count
+        })
+    }
+
+    layer.setData(list, {
+        lnglat: 'coordinate',
+        value: 'count'
+    });
+
+    layer.setOptions({
+        style: {
+            radius: 48,
+            color: {
+                0.5: '#2c7bb6',
+                0.65: '#abd9e9',
+                0.7: '#ffffbf',
+                0.9: '#fde468',
+                1.0: '#d7191c'
+            }
+        }
+    });
+
+    layer.render();
+
+</script>
+</body>
+</html>

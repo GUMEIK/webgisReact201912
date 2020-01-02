@@ -11,12 +11,15 @@ class NormalLoginForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
         console.log(this.props)
-        fetch('http://localhost:12306/').then(res=>res.text()).then(res =>{
-          if(res === 'ok'){
-            console.log(res)
-            this.props.history.push('/table')
-          }
-        })
+        // fetch('http://localhost:12306/').then(res=>res.text()).then(res =>{
+        //   if(res === 'ok'){
+        //     console.log(res)
+        //     this.props.history.push('/table')
+        //   }
+        // })
+        // 登录成功跳转到主界面
+        this.props.history.push('/main')
+        
       }
     });
   };

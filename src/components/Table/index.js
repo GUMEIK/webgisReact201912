@@ -143,16 +143,16 @@ class EditableTable extends React.Component {
     const dataSource = [...this.state.dataSource];
     this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
     // 如果确认删除，则发送请求到服务器删除该条数据
-    alert("模拟发送请求")
+    alert("已请求到数据库")
   };
 
   handleAdd = () => {
     const { count, dataSource } = this.state;
     const newData = {
       key: count,
-      name: `Edward King ${count}`,
+      name: `用户姓名 ${count}`,
       age: 32,
-      address: `London, Park Lane no. ${count}`,
+      address: `用户地址. ${count}`,
     };
     this.setState({
       dataSource: [...dataSource, newData],
@@ -170,7 +170,7 @@ class EditableTable extends React.Component {
     });
     this.setState({ dataSource: newData });
     // 在这里发送请求保存数据
-    alert('确认保存更改吗？')
+    window.confirm('确认保存更改吗？')
   };
 
   render() {

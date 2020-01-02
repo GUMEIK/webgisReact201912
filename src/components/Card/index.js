@@ -8,13 +8,13 @@ export default class CardContainer extends Component {
     }
     render() {
         return (
-            <div style={{ width: 300 }}>
+            <div style={{ width: 300,marginRight:100 }}>
               <Card
     
     cover={
       <img
         alt="example"
-        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+        src={this.props.imgUrl}
       />
     }
     actions={[
@@ -31,8 +31,8 @@ export default class CardContainer extends Component {
   >
     <Meta
       avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-      title="Card title"
-      description="This is the description"
+      title={this.props.title}
+      description={this.props.description}
     />
   
   </Card>
