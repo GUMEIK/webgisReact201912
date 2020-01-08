@@ -14,7 +14,7 @@ export default class Test extends Component {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#">有钱任我行</a>
+                <a className="navbar-brand" href="#">最美焦作行</a>
             </div>
 
 

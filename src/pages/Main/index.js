@@ -8,6 +8,9 @@ import Chat from '../Chat'
 import Card from '../../components/Card'
 import Table from '../../components/Table'
 import Frame from '../Frame'
+import GIS from '../../image/GIS.png'
+import qingtian from '../../image/qingtian.jfif'
+
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -18,7 +21,8 @@ export default class SiderDemo extends React.Component {
     isShowCard:false,
     isShowFrame:false,
     isShowChat:false,
-    isShowHeatMap:false
+    isShowHeatMap:false,
+    isShowServe:false
   };
 
   onCollapse = collapsed => {
@@ -31,7 +35,15 @@ export default class SiderDemo extends React.Component {
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" onClick={()=>{
+          <Menu.Item key="1" onClick={()=>{
+            this.setState({
+              isShowServe:!this.state.isShowServe
+            })
+          }}>
+              <Icon type="pie-chart" />
+              <span>地图</span>
+            </Menu.Item>
+            <Menu.Item key="-1" onClick={()=>{
               this.setState({
                 isShowHeatMap:!this.state.isShowHeatMap
               })
@@ -43,7 +55,7 @@ export default class SiderDemo extends React.Component {
             <SubMenu
             onClick={()=>{
               this.setState({
-                isShowChat:true
+                isShowChat:!this.state.isShowChat
               })
             }}
               key="sub1"
@@ -113,6 +125,9 @@ export default class SiderDemo extends React.Component {
               {this.state.isShowChat && <Frame frameUrl="http://localhost:3001"/>}
               {/* 热力图显示 */}
               {this.state.isShowHeatMap && <Frame frameUrl="http://127.0.0.1:5500/src/HTML/hotpot.html" />}
+              {this.state.isShowServe &&   <div style={{width:'100%',height:'100%'}}>
+                <img src={GIS} alt=""  style={{width:'100%'}}/>
+              </div>}
             <div 
             // 作为arcGIS图层显示的容器
             id="acrgisContainer"
@@ -127,7 +142,7 @@ export default class SiderDemo extends React.Component {
               description="哇哦，云台山耶耶耶"
               />
               {/* 青天河图片地址 */}
-              <Card imgUrl=""
+              <Card imgUrl={qingtian}
               description="青天呵呵呵呵"
               />
               </div>
